@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 function solveEquation(a, b, c) {
 	let arr = [];
@@ -29,17 +29,18 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 	const loanBody = amount - contribution;
 
 	if (loanBody <= 0) {
-		return 0;
+          	return 0;
 	}
 
+
 	if (monthlyPercent === 0) {
-		return parseFloat((loanBody + contribution).toFixed(2));
+                return parseFloat(loanBody.toFixed(2));
 	}
 
 	const monthlyPayment = loanBody * (monthlyPercent + (monthlyPercent / (Math.pow(1 + monthlyPercent, countMonths) - 1)));
 
 
-	const totalAmount = contribution + (monthlyPayment * countMonths);
+	const totalAmount = monthlyPayment * countMonths;
 
 
 	return parseFloat(totalAmount.toFixed(2));
